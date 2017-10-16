@@ -357,6 +357,7 @@ public class RadioRealButtonGroup extends RoundedCornerLayout implements RadioRe
             ((ViewManager) button.getParent()).removeView(button);
         }
         buttons.clear();
+        v_selectors.clear();
         redrawComponents();
     }
 
@@ -364,6 +365,7 @@ public class RadioRealButtonGroup extends RoundedCornerLayout implements RadioRe
         RadioRealButton button = this.buttons.get(index);
         ((ViewManager) button.getParent()).removeView(button);
         buttons.remove(index);
+        v_selectors.remove(index);
         redrawComponents();
 
     }
