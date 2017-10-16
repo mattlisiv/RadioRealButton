@@ -351,6 +351,19 @@ public class RadioRealButtonGroup extends RoundedCornerLayout implements RadioRe
 
     private int numberOfButtons = 0;
 
+    public void clearButtons(){
+        for (RadioRealButton button:buttons) {
+            ((ViewManager) button.getParent()).removeView(button);
+        }
+        buttons.clear();
+    }
+
+    public void removeButtonAt(int index){
+        RadioRealButton button = this.buttons.get(index);
+        ((ViewManager) button.getParent()).removeView(button);
+        buttons.removeAt(index);
+    }
+
     @Override
     public void addView(View child, int index, ViewGroup.LayoutParams params) {
         if (child instanceof RadioRealButton) {
