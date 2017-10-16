@@ -30,6 +30,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnticipateInterpolator;
@@ -361,7 +362,7 @@ public class RadioRealButtonGroup extends RoundedCornerLayout implements RadioRe
     public void removeButtonAt(int index){
         RadioRealButton button = this.buttons.get(index);
         ((ViewManager) button.getParent()).removeView(button);
-        buttons.removeAt(index);
+        buttons.remove(index);
     }
 
     @Override
